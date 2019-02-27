@@ -8,11 +8,24 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <title>Hello, world!</title>
+    <title>Tag Form</title>
   </head>
   <body> 
-    <h1> Hello, world!</h1>
-
+    <div class="container-fluid">
+      <h1>Inserisci i tuoi dati</h1>
+        
+        <form>
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Il tuo nome">
+            <small id="nameHelp" class="form-text text-muted">Inserisci il tuo nome</small>
+          </div>
+          <div class="form-group">
+            <label for="surname">Cognome</label>
+            <input type="text" class="form-control" id="surname" placeholder="Il tuo cognome">
+          </div>
+        </form>  
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
