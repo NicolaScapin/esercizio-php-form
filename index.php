@@ -1,7 +1,7 @@
 <?php
-$nome = (isset($_POST['Nome'])) ? $_POST['Nome'] : '';
-$cognome = (isset($_POST['Cognome'])) ? $_POST['Cognome'] : '';
-$indirizzo = (isset($_POST['Indirizzo'])) ? $_POST['Indirizzo'] : '';
+  $Nome = (isset($_POST['Nome'])) ? $_POST['Nome'] : '';
+  $cognome = (isset($_POST['Cognome'])) ? $_POST['Cognome'] : '';
+  $indirizzo = (isset($_POST['Indirizzo'])) ? $_POST['Indirizzo'] : '';
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,20 +13,27 @@ $indirizzo = (isset($_POST['Indirizzo'])) ? $_POST['Indirizzo'] : '';
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
 
-    <title>esercizio-php-form</title>
+    <title>Esercizio-php-form</title>
   </head>
   <body>
     <div class="container">
       <h1>Inserisci i tuoi dati qui</h1>
-      <div class="alert alert-primary" role="alert">
+        <?php if (empty($Nome)): ?>
+        <div class="alert alert-danger" role="alert">
+          <p>Scrivi il tuo nome</p>
+        </div> 
+        <?php else: ?> 
+        <div class="alert alert-primary" role="alert">
         <ul>
-        <?php
-          foreach ($_POST as $key => $value) {
-          print '<li>' . $key . ': ' . $value . '</li>';
-          }
-        ?>
+          <?php
+            foreach ($_POST as $key => $value) {
+            print '<li>' . $key . ': ' . $value . '</li>';
+            }
+          ?>
         </ul>
-      </div>  
+        </div>
+        <?php endif; ?>
+      
         <form action="index.php" method="post">
           <div class="form-group">
             <label for="name">Nome</label>
@@ -43,7 +50,7 @@ $indirizzo = (isset($_POST['Indirizzo'])) ? $_POST['Indirizzo'] : '';
             <input type="text" class="form-control" name="Indirizzo" id="indirizzo" placeholder="Il tuo indirizzo e-mail">
             <small class="form-text text-muted">Scrivi la tua e-mail</small>
           </div>
-          <button type="submit" class="btn btn-primary">Iscriviti</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 
